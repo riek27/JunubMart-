@@ -3,661 +3,1199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventizon - AI-Powered Luxury Hotel Experience</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>ABC | Premium Residential Contracting & Remodeling</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1a5f7a;
+            --primary-dark: #144c61;
+            --accent: #c8a97e;
+            --dark: #2d2d2d;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: #2c2c2c;
-            background: linear-gradient(135deg, #f8f7f4 0%, #ffffff 100%);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            overflow-x: hidden;
         }
-        
-        .gold-accent {
-            color: #C6A969;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
+
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
         }
-        
-        .header-container {
+
+        .header-scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
-        
+
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #C6A969;
+            color: var(--primary);
             text-decoration: none;
         }
-        
-        nav ul {
+
+        .nav-menu {
             display: flex;
             list-style: none;
         }
-        
-        nav ul li {
-            margin-left: 30px;
+
+        .nav-item {
+            margin-left: 2rem;
         }
-        
-        nav ul li a {
-            color: #2c2c2c;
+
+        .nav-link {
+            color: var(--dark);
             text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
             font-weight: 500;
+            transition: var(--transition);
+            position: relative;
         }
-        
-        nav ul li a:hover {
-            color: #C6A969;
+
+        .nav-link:hover {
+            color: var(--primary);
         }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #C6A969;
-            color: #fff;
-            text-decoration: none;
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
             border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(198, 169, 105, 0.3);
+            transition: var(--transition);
         }
-        
-        .btn:hover {
-            background: #b89b5a;
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(198, 169, 105, 0.4);
+            box-shadow: 0 5px 15px rgba(26, 95, 122, 0.3);
         }
-        
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
             overflow: hidden;
-            padding-top: 80px;
         }
-        
-        .hero-content {
-            max-width: 650px;
-            margin-left: 10%;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 68px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-            color: #2c2c2c;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 550px;
-            color: #555;
-        }
-        
-        /* Floating 3D Room Art */
-        .floating-room {
+
+        .hero-slider {
             position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%) perspective(1000px) rotateY(-15deg) rotateX(5deg);
-            width: 50%;
-            max-width: 700px;
-            height: 500px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(198, 169, 105, 0.1);
-            z-index: 1;
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(-50%) perspective(1000px) rotateY(-15deg) rotateX(5deg);
-                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(198, 169, 105, 0.1);
-            }
-            50% { 
-                transform: translateY(-53%) perspective(1000px) rotateY(-17deg) rotateX(7deg);
-                box-shadow: 0 40px 70px rgba(0, 0, 0, 0.25), 0 0 0 12px rgba(198, 169, 105, 0.15);
-            }
-        }
-        
-        .room-video {
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            z-index: -1;
         }
-        
-        /* Features Section */
-        .features {
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .floating-elements .element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(200, 169, 126, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .element-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .element-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b8976a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(200, 169, 126, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .section {
             padding: 100px 0;
-            background: #fff;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #2c2c2c;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
         }
-        
+
         .section-title p {
-            max-width: 700px;
+            color: var(--gray);
+            max-width: 600px;
             margin: 0 auto;
-            color: #777;
-            font-size: 18px;
         }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .feature-card {
-            background: #faf9f7;
-            border-radius: 10px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 1px solid #f0ede8;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            color: #C6A969;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #2c2c2c;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .feature-card p {
-            color: #666;
-        }
-        
-        /* Rooms Showcase */
-        .showcase {
-            padding: 100px 0;
-            background: #f8f7f4;
-        }
-        
-        .room-showcase {
-            position: relative;
-            height: 600px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .showcase-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 40px;
-            width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            color: #fff;
-        }
-        
-        .showcase-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 100px 0;
-            background: #fff;
-        }
-        
-        .testimonial-grid {
+
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
-        .testimonial-card {
-            background: #faf9f7;
-            padding: 30px;
+
+        .service-card {
+            background: white;
             border-radius: 10px;
-            border: 1px solid #f0ede8;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
         }
-        
-        .testimonial-text {
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .service-link i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background: var(--light);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
+
+        .testimonial p {
             font-style: italic;
             margin-bottom: 20px;
-            color: #555;
+            font-size: 1.1rem;
         }
-        
-        .testimonial-author {
+
+        .client-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-nav {
             display: flex;
-            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
         }
-        
-        .author-avatar {
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
             width: 50px;
             height: 50px;
+            background: var(--light);
             border-radius: 50%;
-            background: #C6A969;
-            margin-right: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #fff;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
-        
-        /* CTA Section */
-        .cta {
-            padding: 100px 0;
-            text-align: center;
-            background: linear-gradient(to bottom, #f8f7f4, #f0ede8);
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
-        
-        .cta h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            margin-bottom: 30px;
-            color: #2c2c2c;
+
+        .contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 10px;
         }
-        
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
         /* Footer */
         footer {
-            background: #2c2c2c;
-            padding: 60px 0 30px;
-            color: #fff;
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 0;
         }
-        
-        .footer-content {
+
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #C6A969;
-            font-family: 'Playfair Display', serif;
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
         }
-        
-        .footer-column ul {
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
             list-style: none;
         }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
+
+        .footer-links li {
+            margin-bottom: 12px;
         }
-        
-        .footer-column ul li a {
-            color: #ccc;
+
+        .footer-links a {
+            color: #aaa;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: var(--transition);
         }
-        
-        .footer-column ul li a:hover {
-            color: #C6A969;
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
         }
-        
-        .copyright {
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .newsletter-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: #b8976a;
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #999;
-            font-size: 14px;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
         }
-        
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .floating-room {
-                right: 5%;
-                width: 45%;
-            }
-            
-            .hero h1 {
-                font-size: 58px;
-            }
-        }
-        
         @media (max-width: 992px) {
-            .floating-room {
-                position: relative;
-                width: 80%;
-                margin: 40px auto;
-                right: auto;
-                top: auto;
-                transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-                animation: float-mobile 8s ease-in-out infinite;
+            .hero h1 {
+                font-size: 2.8rem;
             }
             
-            @keyframes float-mobile {
-                0%, 100% { 
-                    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-                }
-                50% { 
-                    transform: perspective(1000px) rotateY(-12deg) rotateX(7deg);
-                }
-            }
-            
-            .hero {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
                 flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                padding-top: 120px;
-                height: auto;
-                min-height: 100vh;
+                background: white;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 80px);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 40px 20px;
             }
             
-            .hero-content {
-                margin: 0 auto;
-                padding: 40px 0;
+            .nav-menu.active {
+                right: 0;
             }
             
-            .hero p {
-                margin: 0 auto 30px;
+            .nav-item {
+                margin: 0 0 25px 0;
             }
             
-            .hero h1 {
-                font-size: 48px;
+            .hamburger {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
             }
         }
-        
+
         @media (max-width: 768px) {
-            nav ul li {
-                margin-left: 15px;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            .hero h1 {
-                font-size: 40px;
+            .section {
+                padding: 70px 0;
             }
             
             .section-title h2 {
-                font-size: 36px;
+                font-size: 2rem;
             }
             
-            .floating-room {
-                width: 90%;
-                height: 350px;
+            .contact-form {
+                padding: 25px;
             }
         }
-        
+
         @media (max-width: 576px) {
-            nav ul {
-                display: none;
-            }
-            
             .hero h1 {
-                font-size: 36px;
+                font-size: 1.8rem;
             }
             
-            .hero p {
-                font-size: 18px;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
             
-            .section-title h2 {
-                font-size: 32px;
-            }
-            
-            .floating-room {
-                height: 300px;
-            }
-            
-            .feature-card {
-                padding: 30px 20px;
+            .testimonial {
+                padding: 25px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Ventizon</a>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Dining</a></li>
-                    <li><a href="#">Experiences</a></li>
-                    <li><a href="#">Contact</a></li>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">ABC</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link nav-cta">Free Quote</a></li>
                 </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
-            <a href="#" class="btn">Book Now</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Experience <span class="gold-accent">Luxury</span> Reimagined</h1>
-            <p>Ventizon's AI-powered platform delivers personalized luxury hotel experiences tailored just for you.</p>
-            <a href="#" class="btn">Discover Your Escape</a>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="floating-elements">
+            <div class="element element-1"></div>
+            <div class="element element-2"></div>
+            <div class="element element-3"></div>
         </div>
         
-        <!-- Floating 3D Room with Video -->
-        <div class="floating-room">
-            <video autoplay muted loop class="room-video">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-hotel-room-with-two-beds-41558-large.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>AI-<span class="gold-accent">Powered</span> Luxury</h2>
-                <p>Ventizon combines cutting-edge artificial intelligence with unparalleled hospitality to create personalized experiences for every guest.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Smart Room Allocation</h3>
-                    <p>Our AI selects the perfect room based on your preferences, previous stays, and real-time availability.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-concierge-bell"></i>
-                    </div>
-                    <h3>Personalized Concierge</h3>
-                    <p>An AI assistant that learns your preferences to recommend activities, dining, and services tailored just for you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Intelligent Dining</h3>
-                    <p>Our system pre-orders your favorite meals and recommends new culinary experiences based on your tastes.</p>
-                </div>
+        <div class="hero-content">
+            <h1>Transform Your House Into The Home Of Your Dreams</h1>
+            <p>Premium residential contracting and remodeling services with over 15 years of excellence in craftsmanship and customer satisfaction.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
+                <a href="#contact" class="btn btn-secondary">Book a Consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- Room Showcase -->
-    <section class="showcase">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Luxurious <span class="gold-accent">Accommodations</span></h2>
-                <p>Step into our meticulously designed rooms and suites, where technology meets comfort in perfect harmony.</p>
+                <h2>Our Premium Services</h2>
+                <p>From concept to completion, we deliver exceptional craftsmanship and attention to detail in every project.</p>
             </div>
-            <div class="room-showcase">
-                <video autoplay muted loop class="room-video">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-a-hotel-bedroom-41557-large.mp4" type="video/mp4">
-                </video>
-                <div class="showcase-content">
-                    <h3>Executive Suite</h3>
-                    <p>Experience the pinnacle of luxury with automated climate control, mood lighting, and breathtaking views.</p>
-                    <a href="#" class="btn">View Details</a>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Kitchen Renovations</h3>
+                        <p>Transform your kitchen into a beautiful, functional space with our custom cabinetry, countertops, and premium finishes.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Bathroom Remodeling</h3>
+                        <p>Create your personal spa-like retreat with our luxury bathroom renovations featuring premium materials and fixtures.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Home Additions</h3>
+                        <p>Expand your living space with seamless home additions that enhance both your lifestyle and property value.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>Guest <span class="gold-accent">Experiences</span></h2>
-                <p>Discover what our guests have to say about their stay at Ventizon.</p>
+                <h2>Our Recent Projects</h2>
+                <p>Browse through our portfolio of completed projects showcasing our commitment to quality and design excellence.</p>
             </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The AI concierge remembered my preference for extra pillows and my favorite morning beverage. It felt like staying with friends who anticipate your every need."
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-project="1">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Modern Kitchen Transformation</h3>
+                        <p>Complete kitchen remodel with custom cabinetry and quartz countertops</p>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">EM</div>
-                        <div class="author-info">
-                            <h4>Emma Richardson</h4>
-                            <p>Luxury Travel Blogger</p>
+                </div>
+                <div class="portfolio-item" data-project="2">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Master Bathroom</h3>
+                        <p>Spa-inspired bathroom renovation with freestanding tub and custom tile work</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-project="3">
+                    <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Whole Home Renovation</h3>
+                        <p>Complete interior transformation with open concept living space</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from homeowners who have transformed their spaces with us.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"ABC transformed our outdated kitchen into a modern, functional space we absolutely love. Their attention to detail and professionalism exceeded our expectations. The project was completed on time and within budget."</p>
+                    <div class="client-name">Sarah Johnson</div>
+                    <div class="client-location">Maplewood, NJ</div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"We added a second-story addition to our home, and the ABC team made the process seamless. Their craftsmanship is exceptional, and they were clean, respectful, and communicative throughout the entire project."</p>
+                    <div class="client-name">Michael & Lisa Thompson</div>
+                    <div class="client-location">Westfield, NJ</div>
+                </div>
+                <div class="testimonial">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Our master bathroom renovation was a dream come true. The design team listened to our ideas and created a space that perfectly balances luxury and functionality. We couldn't be happier with the results!"</p>
+                    <div class="client-name">Jennifer Williams</div>
+                    <div class="client-location">Summit, NJ</div>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-slide="0"></div>
+                    <div class="testimonial-dot" data-slide="1"></div>
+                    <div class="testimonial-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your project? Contact us for a free consultation and quote.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Our Office</h3>
+                            <p>123 Contractor Avenue, Suite 100<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567<br>Mon-Fri: 8am-6pm</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@abccontracting.com<br>quotes@abccontracting.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8am - 6pm<br>Saturday: 9am - 1pm</p>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "The restaurant recommendations were spot on! The AI system suggested dishes I would love based on my dietary preferences, and it was never wrong."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MJ</div>
-                        <div class="author-info">
-                            <h4>Michael Johnson</h4>
-                            <p>Business Executive</p>
+                <div class="contact-form">
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        "From the automated room customization to the personalized wake-up routine, every aspect of our stay was perfected by Ventizon's amazing AI technology."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SR</div>
-                        <div class="author-info">
-                            <h4>Sarah & Robert</h4>
-                            <p>Honeymooners</p>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="kitchen">Kitchen Renovation</option>
+                                <option value="bathroom">Bathroom Remodeling</option>
+                                <option value="addition">Home Addition</option>
+                                <option value="whole-home">Whole Home Renovation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Project Details" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Free Quote</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Experience the <span class="gold-accent">Future</span> of Luxury?</h2>
-            <p>Book your stay at Ventizon and let our AI create your perfect getaway.</p>
-            <a href="#" class="btn">Book Now</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Ventizon</h3>
-                    <p>Where artificial intelligence meets unparalleled luxury to create personalized experiences for every guest.</p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ABC Contracting</h3>
+                    <p>Premium residential contracting and remodeling services with over 15 years of excellence in craftsmanship and customer satisfaction.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                    </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Navigate</h3>
-                    <ul>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Rooms & Suites</a></li>
-                        <li><a href="#">Dining</a></li>
-                        <li><a href="#">Experiences</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Avenue, Prestige District</li>
-                        <li><i class="fas fa-phone"></i> +1 (888) 555-VENTIZON</li>
-                        <li><i class="fas fa-envelope"></i> info@ventizon.com</li>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Kitchen Renovations</a></li>
+                        <li><a href="#">Bathroom Remodeling</a></li>
+                        <li><a href="#">Home Additions</a></li>
+                        <li><a href="#">Whole Home Renovation</a></li>
+                        <li><a href="#">Custom Cabinetry</a></li>
+                        <li><a href="#">Design Consultation</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Ventizon Luxury Hotels. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Contracting. All Rights Reserved. | <a href="#" style="color: #aaa;">Privacy Policy</a> | <a href="#" style="color: #aaa;">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div id="modalContent">
+                    <!-- Modal content will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Header scroll effect
+        // Sticky Header
         window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = "rgba(255, 255, 255, 0.98)";
-                header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
             } else {
-                header.style.background = "rgba(255, 255, 255, 0.95)";
-                header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Change slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(n) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            currentTestimonial = (n + testimonials.length) % testimonials.length;
+            testimonials[currentTestimonial].classList.add('active');
+            dots[currentTestimonial].classList.add('active');
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            showTestimonial(currentTestimonial + 1);
+        }, 6000);
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            this.reset();
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('projectModal');
+        const modalClose = document.querySelector('.modal-close');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const projectId = item.getAttribute('data-project');
+                // In a real implementation, you would load project-specific content here
+                document.getElementById('modalContent').innerHTML = `
+                    <h2>Project Details</h2>
+                    <p>Detailed information about this project would appear here in a full implementation, including multiple images, project specifications, and client testimonials specific to this project.</p>
+                `;
+                modal.style.display = 'flex';
+            });
+        });
+        
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
             }
         });
     </script>
