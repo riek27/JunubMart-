@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC | Premium Residential Contracting & Remodeling</title>
+    <title>ABC Contracting | Premium Residential Construction & Remodeling</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* === CSS VARIABLES FOR CONSISTENT STYLING === */
         :root {
             --primary: #1a5f7a;
             --primary-dark: #144c61;
             --accent: #c8a97e;
+            --accent-dark: #b8976a;
             --dark: #2d2d2d;
+            --darker: #1a1a1a;
             --light: #f8f9fa;
             --gray: #6c757d;
+            --light-gray: #e9ecef;
             --transition: all 0.3s ease;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --border-radius: 10px;
         }
 
+        /* === BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -31,7 +43,91 @@
             overflow-x: hidden;
         }
 
-        /* Header & Navigation */
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 25px auto 0;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(200, 169, 126, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* === HEADER & NAVIGATION === */
         header {
             position: fixed;
             top: 0;
@@ -49,13 +145,6 @@
             background: rgba(255, 255, 255, 0.98);
         }
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -68,6 +157,13 @@
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
         }
 
         .nav-menu {
@@ -123,9 +219,11 @@
         .hamburger {
             display: none;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
         }
 
-        /* Hero Section */
+        /* === HERO SECTION WITH SLIDER === */
         .hero {
             height: 100vh;
             position: relative;
@@ -156,6 +254,7 @@
             transition: opacity 1.5s ease;
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
         .slide.active {
@@ -168,7 +267,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
@@ -209,7 +308,7 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             padding: 0 20px;
             z-index: 2;
         }
@@ -219,78 +318,26 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-btns {
             display: flex;
             gap: 15px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #b8976a;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(200, 169, 126, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-
-        /* Services Section */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
+        /* === SERVICES SECTION === */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -299,22 +346,41 @@
 
         .service-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-hover);
         }
 
         .service-img {
-            height: 200px;
+            height: 220px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 95, 122, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-overlay {
+            opacity: 1;
         }
 
         .service-content {
@@ -330,6 +396,26 @@
         .service-card p {
             color: var(--gray);
             margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            padding: 5px 0;
+            color: var(--gray);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
         }
 
         .service-link {
@@ -350,9 +436,33 @@
             transform: translateX(5px);
         }
 
-        /* Portfolio Section */
+        /* === PORTFOLIO SECTION === */
         .portfolio {
             background: var(--light);
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
 
         .portfolio-grid {
@@ -363,9 +473,9 @@
 
         .portfolio-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             height: 300px;
             cursor: pointer;
         }
@@ -408,78 +518,188 @@
             opacity: 0.9;
         }
 
-        /* Testimonials */
-        .testimonials-slider {
-            max-width: 800px;
-            margin: 0 auto;
+        .portfolio-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* === TESTIMONIALS SECTION === */
+        .testimonials-dark {
+            background: linear-gradient(135deg, var(--darker) 0%, #2d2d2d 100%);
+            color: #f8f9fa;
+        }
+
+        .testimonials-dark .section-title h2,
+        .testimonials-dark .section-title p {
+            color: white;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 60px auto;
             position: relative;
         }
 
-        .testimonial {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 50px;
             text-align: center;
             display: none;
+            animation: fadeIn 0.8s ease;
         }
 
-        .testimonial.active {
+        .testimonial-card.active {
             display: block;
-            animation: fadeIn 1s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .client-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 3px solid var(--accent);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .client-name {
-            font-weight: 600;
-            color: var(--dark);
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .rating {
             color: #ffc107;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .client-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .client-details h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .client-details p {
+            margin: 5px 0 0;
+            color: #aaa;
+            font-size: 0.9rem;
         }
 
         .testimonial-nav {
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            gap: 10px;
+            margin-top: 40px;
         }
 
-        .testimonial-dot {
+        .nav-dot {
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #ddd;
-            margin: 0 5px;
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: var(--transition);
         }
 
-        .testimonial-dot.active {
-            background: var(--primary);
+        .nav-dot.active,
+        .nav-dot:hover {
+            background: var(--accent);
+            transform: scale(1.2);
         }
 
-        /* Contact Section */
+        /* === ABOUT SECTION === */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .about-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-features i {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* === CONTACT SECTION === */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -519,7 +739,8 @@
         .contact-form {
             background: var(--light);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
         }
 
         .form-group {
@@ -546,9 +767,92 @@
             resize: vertical;
         }
 
-        /* Footer */
+        .map-container {
+            margin-top: 60px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* === BLOG PREVIEW SECTION === */
+        .blog-preview {
+            background: var(--light);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .blog-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .blog-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .blog-link i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .blog-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* === FOOTER === */
         footer {
-            background: var(--dark);
+            background: var(--darker);
             color: white;
             padding: 80px 0 0;
         }
@@ -593,6 +897,11 @@
         .footer-links a:hover {
             color: white;
             padding-left: 5px;
+        }
+
+        .footer-about p {
+            color: #aaa;
+            margin-bottom: 20px;
         }
 
         .social-links {
@@ -643,7 +952,7 @@
         }
 
         .newsletter-btn:hover {
-            background: #b8976a;
+            background: var(--accent-dark);
         }
 
         .footer-bottom {
@@ -654,7 +963,7 @@
             font-size: 0.9rem;
         }
 
-        /* Modal */
+        /* === MODAL === */
         .modal {
             display: none;
             position: fixed;
@@ -671,7 +980,7 @@
 
         .modal-content {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             max-width: 900px;
             width: 100%;
             max-height: 90vh;
@@ -695,7 +1004,7 @@
             padding: 40px;
         }
 
-        /* Responsive Design */
+        /* === RESPONSIVE DESIGN === */
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.8rem;
@@ -754,6 +1063,11 @@
             .contact-form {
                 padding: 25px;
             }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -765,8 +1079,17 @@
                 grid-template-columns: 1fr;
             }
             
-            .testimonial {
+            .testimonial-card {
                 padding: 25px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+            
+            .client-info {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -776,14 +1099,14 @@
     <header id="header">
         <div class="container">
             <nav class="nav-container">
-                <a href="#" class="logo">ABC</a>
+                <a href="#" class="logo"><i class="fas fa-hammer"></i> ABC Contracting</a>
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link nav-cta">Free Quote</a></li>
                 </ul>
                 <div class="hamburger">
@@ -827,26 +1150,56 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="service-overlay">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h3>Kitchen Renovations</h3>
                         <p>Transform your kitchen into a beautiful, functional space with our custom cabinetry, countertops, and premium finishes.</p>
+                        <ul class="service-features">
+                            <li>Custom cabinetry design</li>
+                            <li>Premium countertop installation</li>
+                            <li>Professional lighting solutions</li>
+                            <li>Flooring and backsplash</li>
+                        </ul>
                         <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="service-overlay">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h3>Bathroom Remodeling</h3>
                         <p>Create your personal spa-like retreat with our luxury bathroom renovations featuring premium materials and fixtures.</p>
+                        <ul class="service-features">
+                            <li>Luxury shower systems</li>
+                            <li>Custom vanity design</li>
+                            <li>Tile and stone work</li>
+                            <li>Plumbing and lighting</li>
+                        </ul>
                         <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                        <div class="service-overlay">
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
                     <div class="service-content">
                         <h3>Home Additions</h3>
                         <p>Expand your living space with seamless home additions that enhance both your lifestyle and property value.</p>
+                        <ul class="service-features">
+                            <li>Room additions</li>
+                            <li>Second story additions</li>
+                            <li>Sunrooms and conservatories</li>
+                            <li>Garage conversions</li>
+                        </ul>
                         <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -861,80 +1214,182 @@
                 <h2>Our Recent Projects</h2>
                 <p>Browse through our portfolio of completed projects showcasing our commitment to quality and design excellence.</p>
             </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+                <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
+                <button class="filter-btn" data-filter="addition">Additions</button>
+                <button class="filter-btn" data-filter="renovation">Renovations</button>
+            </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-project="1">
+                <div class="portfolio-item" data-category="kitchen">
                     <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-overlay">
                         <h3>Modern Kitchen Transformation</h3>
                         <p>Complete kitchen remodel with custom cabinetry and quartz countertops</p>
                     </div>
+                    <div class="portfolio-badge">Kitchen</div>
                 </div>
-                <div class="portfolio-item" data-project="2">
+                <div class="portfolio-item" data-category="bathroom">
                     <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-overlay">
                         <h3>Luxury Master Bathroom</h3>
                         <p>Spa-inspired bathroom renovation with freestanding tub and custom tile work</p>
                     </div>
+                    <div class="portfolio-badge">Bathroom</div>
                 </div>
-                <div class="portfolio-item" data-project="3">
+                <div class="portfolio-item" data-category="addition">
                     <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="portfolio-overlay">
                         <h3>Whole Home Renovation</h3>
                         <p>Complete interior transformation with open concept living space</p>
                     </div>
+                    <div class="portfolio-badge">Addition</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
+    <section id="testimonials" class="section testimonials-dark">
         <div class="container">
             <div class="section-title">
                 <h2>What Our Clients Say</h2>
                 <p>Don't just take our word for it - hear from homeowners who have transformed their spaces with us.</p>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonial active">
+            <div class="testimonials-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card active">
                     <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"ABC transformed our outdated kitchen into a modern, functional space we absolutely love. Their attention to detail and professionalism exceeded our expectations. The project was completed on time and within budget."</p>
-                    <div class="client-name">Sarah Johnson</div>
-                    <div class="client-location">Maplewood, NJ</div>
+                    <p class="testimonial-text">"ABC transformed our outdated kitchen into a modern, functional space we absolutely love. Their attention to detail and professionalism exceeded our expectations. The project was completed on time and within budget, and the team was clean and respectful throughout the entire process."</p>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson" class="client-photo">
+                        <div class="client-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Maplewood, NJ • Kitchen Renovation</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
                     <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"We added a second-story addition to our home, and the ABC team made the process seamless. Their craftsmanship is exceptional, and they were clean, respectful, and communicative throughout the entire project."</p>
-                    <div class="client-name">Michael & Lisa Thompson</div>
-                    <div class="client-location">Westfield, NJ</div>
+                    <p class="testimonial-text">"We added a second-story addition to our home, and the ABC team made the process seamless. Their craftsmanship is exceptional. They were communicative at every stage, and we always felt informed and confident in their work. We highly recommend them for any major home project."</p>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Thompson" class="client-photo">
+                        <div class="client-details">
+                            <h4>Michael & Lisa Thompson</h4>
+                            <p>Westfield, NJ • Second-Story Addition</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial">
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
                     <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>"Our master bathroom renovation was a dream come true. The design team listened to our ideas and created a space that perfectly balances luxury and functionality. We couldn't be happier with the results!"</p>
-                    <div class="client-name">Jennifer Williams</div>
-                    <div class="client-location">Summit, NJ</div>
+                    <p class="testimonial-text">"Our master bathroom renovation was a dream come true. The design team listened to our ideas and created a space that perfectly balances luxury and functionality. The quality of work is outstanding, and we couldn't be happier with the results! We've already recommended ABC to all our neighbors."</p>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Jennifer Williams" class="client-photo">
+                        <div class="client-details">
+                            <h4>Jennifer Williams</h4>
+                            <p>Summit, NJ • Bathroom Remodel</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-nav">
-                    <div class="testimonial-dot active" data-slide="0"></div>
-                    <div class="testimonial-dot" data-slide="1"></div>
-                    <div class="testimonial-dot" data-slide="2"></div>
+                    <button class="nav-dot active" data-slide="0"></button>
+                    <button class="nav-dot" data-slide="1"></button>
+                    <button class="nav-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ABC Contracting Team">
+                </div>
+                <div class="about-content">
+                    <h2>Building Excellence Since 2008</h2>
+                    <p>ABC Contracting was founded with a simple mission: to deliver exceptional craftsmanship and unparalleled customer service in every project we undertake. With over 15 years of experience in the residential construction industry, we've built a reputation for quality, reliability, and attention to detail.</p>
+                    <p>Our team of skilled craftsmen, project managers, and designers work collaboratively to ensure your vision becomes reality. We're committed to using only the highest quality materials and the latest construction techniques.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Licensed, bonded, and insured</li>
+                        <li><i class="fas fa-check-circle"></i> Award-winning design team</li>
+                        <li><i class="fas fa-check-circle"></i> Project management excellence</li>
+                        <li><i class="fas fa-check-circle"></i> Quality craftsmanship guarantee</li>
+                    </ul>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>350+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="section blog-preview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Remodeling Tips & Insights</h2>
+                <p>Explore our latest articles on home renovation trends, design ideas, and maintenance tips.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1540518614846-7eded102d7c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 15, 2025</span>
+                            <span><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>2025 Kitchen Design Trends</h3>
+                        <p>Discover the latest trends in kitchen design, from smart storage solutions to bold color choices that are transforming homes this year.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1621370466385-89a16cd9636c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 8, 2025</span>
+                            <span><i class="far fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>Budgeting for Your Home Addition</h3>
+                        <p>Learn how to plan and budget for a home addition, including cost factors to consider and how to maximize your investment.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 1, 2025</span>
+                            <span><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Creating a Spa-Like Bathroom Retreat</h3>
+                        <p>Transform your bathroom into a personal sanctuary with these design tips and luxury features that promote relaxation and wellness.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1014,6 +1469,9 @@
                     </form>
                 </div>
             </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.260812847257!2d-74.00773228459413!3d40.74129017932914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a3c1a4913f%3A0x3a93c4d1ab02139!2sNew%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1645561522246!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
     </section>
 
@@ -1023,12 +1481,13 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>ABC Contracting</h3>
-                    <p>Premium residential contracting and remodeling services with over 15 years of excellence in craftsmanship and customer satisfaction.</p>
+                    <p class="footer-about">Premium residential contracting and remodeling services with over 15 years of excellence in craftsmanship and customer satisfaction.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
                         <a href="#"><i class="fab fa-houzz"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -1109,19 +1568,19 @@
         setInterval(nextSlide, 5000);
 
         // Testimonial Slider
-        const testimonials = document.querySelectorAll('.testimonial');
-        const dots = document.querySelectorAll('.testimonial-dot');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        const navDots = document.querySelectorAll('.nav-dot');
         let currentTestimonial = 0;
         
-        function showTestimonial(n) {
-            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            currentTestimonial = (n + testimonials.length) % testimonials.length;
-            testimonials[currentTestimonial].classList.add('active');
-            dots[currentTestimonial].classList.add('active');
+        function showTestimonial(index) {
+            testimonialCards.forEach(card => card.classList.remove('active'));
+            navDots.forEach(dot => dot.classList.remove('active'));
+            currentTestimonial = (index + testimonialCards.length) % testimonialCards.length;
+            testimonialCards[currentTestimonial].classList.add('active');
+            navDots[currentTestimonial].classList.add('active');
         }
         
-        dots.forEach((dot, index) => {
+        navDots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 showTestimonial(index);
             });
@@ -1130,7 +1589,7 @@
         // Auto-rotate testimonials
         setInterval(() => {
             showTestimonial(currentTestimonial + 1);
-        }, 6000);
+        }, 8000);
 
         // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
@@ -1172,14 +1631,36 @@
             this.reset();
         });
 
+        // Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
         // Modal functionality
         const modal = document.getElementById('projectModal');
         const modalClose = document.querySelector('.modal-close');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
         
         portfolioItems.forEach(item => {
             item.addEventListener('click', () => {
-                const projectId = item.getAttribute('data-project');
+                const projectId = item.getAttribute('data-category');
                 // In a real implementation, you would load project-specific content here
                 document.getElementById('modalContent').innerHTML = `
                     <h2>Project Details</h2>
@@ -1197,6 +1678,13 @@
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
+        });
+
+        // Newsletter form submission
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
         });
     </script>
 </body>
