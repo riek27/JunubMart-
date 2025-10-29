@@ -269,7 +269,7 @@ const products = [
         name: "Wireless Earbuds",
         price: "$49.99",
         description: "High-quality wireless earbuds with noise cancellation.",
-        image: "https://images.unsplash.com/photo-1590658165737-15a047b8b5e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1010&q=80",
+        image: "assets/earbud.jpg",
         category: "electronics"
     },
     {
