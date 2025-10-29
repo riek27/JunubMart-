@@ -4,173 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JunubMart - Premium Online Store in Juba, South Sudan</title>
-    <meta name="description" content="JunubMart is Juba's premier online marketplace offering quality products, tech gadgets, and reliable delivery services across South Sudan.">
-    <meta name="keywords" content="JunubMart, Juba, South Sudan, online store, shopping, delivery, tech gadgets">
-    <meta name="author" content="JunubMart">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="JunubMart - Premium Online Store in Juba, South Sudan">
-    <meta property="og:description" content="Explore, Discover, Shop with JunubMart - Juba's premier online marketplace">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <meta name="description" content="JunubMart - Your premium online shopping destination in Juba, South Sudan. Explore, discover and shop the latest products with fast delivery.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header & Navigation -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="assets/junubmart-logo.png" alt="JunubMart" class="logo-image">
-                    <div class="logo-text">
-                        JUNUB <span>MART</span>
-                    </div>
-                </a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <a href="index.html" class="logo">Junub<span>Mart</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Home Page Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-slideshow">
-                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1563013546-77cf5f7f7f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
-            </div>
-            <div class="hero-content">
-                <div class="hero-logo">
-                    <img src="junubmart-logo.png" alt="JunubMart" class="hero-logo-image">
-                    <h1>Explore, Discover, Shop – JunubMart</h1>
-                </div>
-                <p>Your premier online marketplace in Juba, South Sudan. Discover quality products, tech gadgets, and reliable delivery services.</p>
-                <a href="products.html" class="btn">Shop Now</a>
-            </div>
-            <a href="#featured-products" class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
-            </a>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <video class="hero-video" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-digital-technology-background-129-large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Explore, Discover, Shop</h1>
+            <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
+            <a href="products.html" class="btn">Shop Now</a>
+        </div>
+        <a href="#about" class="scroll-down">↓</a>
+    </section>
 
-        <!-- Featured Products Section -->
-        <section id="featured-products" class="section">
-            <div class="container">
-                <h2 class="section-title">Featured Products</h2>
-                <div class="products-grid">
-                    <!-- Product cards will be dynamically inserted here -->
+    <!-- About Section -->
+    <section id="about" class="section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>About JunubMart</h2>
+                <p>Discover our story and commitment to serving South Sudan</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JunubMart Team">
                 </div>
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="products.html" class="btn btn-secondary">View All Products</a>
+                <div class="about-text">
+                    <h3>Your Trusted Shopping Partner</h3>
+                    <p>JunubMart was founded in 2020 with a vision to revolutionize online shopping in South Sudan. We understand the unique challenges and opportunities in our market and are committed to providing solutions that make life easier for our customers.</p>
+                    <p>Our team consists of passionate individuals dedicated to bringing you the best products at competitive prices, with reliable delivery across Juba and beyond.</p>
+                    <div class="mission-vision">
+                        <div class="mission">
+                            <h3>Our Mission</h3>
+                            <p>To provide convenient access to quality products through innovative e-commerce solutions that empower communities and drive economic growth in South Sudan.</p>
+                        </div>
+                        <div class="vision">
+                            <h3>Our Vision</h3>
+                            <p>To become the leading online marketplace in South Sudan, known for reliability, quality, and exceptional customer service.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Preview Section -->
-        <section class="section" style="background: #f8fafc;">
-            <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shipping-fast"></i>
-                        </div>
-                        <h3>Fast Delivery</h3>
-                        <p>Quick and reliable delivery services across Juba and surrounding areas.</p>
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Discover our carefully curated selection of premium products</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wireless Headphones">
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Tech Gadgets</h3>
-                        <p>Latest smartphones, tablets, and accessories from top brands.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop"></i>
-                        </div>
-                        <h3>Educational Tech</h3>
-                        <p>Tools and devices to support learning and development.</p>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Wireless Headphones</h3>
+                        <div class="product-price">$89.99</div>
+                        <p class="product-description">High-quality sound with noise cancellation technology and comfortable fit for all-day use.</p>
+                        <a href="products.html" class="btn btn-outline">View Details</a>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="services.html" class="btn">Learn More</a>
+                <div class="product-card" data-category="fashion">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Casual T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Cotton T-Shirt</h3>
+                        <div class="product-price">$24.99</div>
+                        <p class="product-description">Soft, breathable cotton t-shirt available in multiple colors and sizes for everyday comfort.</p>
+                        <a href="products.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Coffee Maker">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Automatic Coffee Maker</h3>
+                        <div class="product-price">$149.99</div>
+                        <p class="product-description">Brew perfect coffee every time with this programmable coffee maker with thermal carafe.</p>
+                        <a href="products.html" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="electronics">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart Watch">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Smart Fitness Watch</h3>
+                        <div class="product-price">$199.99</div>
+                        <p class="product-description">Track your fitness, receive notifications, and monitor your health with this advanced smartwatch.</p>
+                        <a href="products.html" class="btn btn-outline">View Details</a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="products.html" class="btn">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer more than just products - experience our comprehensive services</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>We offer reliable and timely delivery services across Juba with real-time tracking for your peace of mind.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Tech Solutions</h3>
+                    <p>From smartphones to laptops, we provide the latest technology with setup assistance and support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Educational Tech</h3>
+                    <p>Specialized technology solutions for students and educators to enhance learning experiences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>Secure Payments</h3>
+                    <p>Multiple payment options with bank-level security to ensure your transactions are safe and convenient.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="services.html" class="btn">View All Services</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="junubmart-logo.png" alt="JunubMart" class="footer-logo-image">
-                        <div class="footer-logo-text">
-                            JUNUB <span>MART</span>
-                        </div>
-                    </div>
-                    <p>Your trusted online store in Juba, South Sudan. We bring quality products and reliable services to your doorstep.</p>
+                    <h3>JunubMart</h3>
+                    <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">ig</a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="about.html">About Us</a>
-                        <a href="products.html">Products</a>
-                        <a href="services.html">Services</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Customer Service</h3>
-                    <div class="footer-links">
-                        <a href="#">FAQ</a>
-                        <a href="#">Shipping Policy</a>
-                        <a href="#">Returns & Refunds</a>
-                        <a href="#">Payment Methods</a>
-                        <a href="#">Privacy Policy</a>
-                    </div>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                    </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="footer-links">
-                        <p><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</p>
-                        <p><i class="fas fa-phone"></i> +211 123 456 789</p>
-                        <p><i class="fas fa-envelope"></i> info@junubmart.com</p>
-                    </div>
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email address" required>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
+                    </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 JunubMart. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2023 JunubMart. All rights reserved. | Designed with ❤️ in Juba, South Sudan</p>
             </div>
         </div>
     </footer>
