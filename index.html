@@ -3,169 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JunubMart - Premium Online Store in Juba, South Sudan</title>
-    <meta name="description" content="JunubMart - Your premium online shopping destination in Juba, South Sudan. Explore, discover and shop the latest products with fast delivery.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <title>ABC Remodelers | Premier Home Remodeling Experts</title>
+    <meta name="description" content="ABC Remodelers - Chicago's premier home remodeling experts with 18 years of experience in kitchen, bathroom, and whole home renovations.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <!-- Header & Navigation -->
-    <header id="header">
+    <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">Junub<span>Mart</span></a>
+                <a href="index.html" class="logo">ABC <span>Remodelers</span></a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                            <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                            <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                            <li><a href="services.html#home-additions">Home Additions</a></li>
+                            <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                            <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li class="dropdown">
+                        <a href="#!">More <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li><a href="our-process.html">Our Process</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="particles" id="particles"></div>
-        <video class="hero-video" autoplay muted loop>
-            <source src="assets/juba.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay"></div>
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Explore, Discover, Shop</h1>
-            <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
-            <a href="products.html" class="btn">Shop Now</a>
-        </div>
-        <a href="#about" class="scroll-down">↓</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>About JunubMart</h2>
-                <p>Discover our story and commitment to serving South Sudan</p>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JunubMart Team">
-                </div>
-                <div class="about-text">
-                    <h3>Your Trusted Shopping Partner</h3>
-                    <p>JunubMart was founded in 2020 with a vision to revolutionize online shopping in South Sudan. We understand the unique challenges and opportunities in our market and are committed to providing solutions that make life easier for our customers.</p>
-                    <p>Our team consists of passionate individuals dedicated to bringing you the best products at competitive prices, with reliable delivery across Juba and beyond.</p>
-                    <div class="mission-vision">
-                        <div class="mission">
-                            <h3>Our Mission</h3>
-                            <p>To provide convenient access to quality products through innovative e-commerce solutions that empower communities and drive economic growth in South Sudan.</p>
-                        </div>
-                        <div class="vision">
-                            <h3>Our Vision</h3>
-                            <p>To become the leading online marketplace in South Sudan, known for reliability, quality, and exceptional customer service.</p>
-                        </div>
-                    </div>
-                </div>
+            <h1>Crafting Exceptional Living Spaces</h1>
+            <p>Transforming homes with unparalleled craftsmanship, attention to detail, and a commitment to excellence since 2005.</p>
+            <div class="hero-btns">
+                <a href="contact.html" class="btn">Request a Free Consultation</a>
+                <a href="portfolio.html" class="btn btn-light">View Our Work</a>
             </div>
         </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Products</h2>
-                <p>Discover our carefully curated selection of premium products</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card" data-category="electronics">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wireless Headphones">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Premium Wireless Headphones</h3>
-                        <div class="product-price">$89.99</div>
-                        <p class="product-description">High-quality sound with noise cancellation technology and comfortable fit for all-day use.</p>
-                        <a href="products.html" class="btn btn-outline">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card" data-category="fashion">
-                    <div class="product-image">
-                        <img src="assets/ipadd.jpg" alt="Casual T-Shirt">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">iPad Pro 12.9</h3>
-                        <div class="product-price">$789.99</div>
-                        <p class="product-description">Experience ultimate performance and stunning Retina display with the new iPad Pro 12.9-inch model.</p>
-                        <a href="products.html" class="btn btn-outline">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card" data-category="home">
-                    <div class="product-image">
-                        <img src="assets/tecno.jpg" alt="Coffee Maker">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Tecno Camon 20</h3>
-                        <div class="product-price">$249.99</div>
-                        <p class="product-description"> Capture stunning photos and enjoy smooth performance with the latest Tecno Camon 20 smartphone.</p>
-                        <a href="products.html" class="btn btn-outline">View Details</a>
-                    </div>
-                </div>
-                <div class="product-card" data-category="electronics">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Smart Watch">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Smart Fitness Watch</h3>
-                        <div class="product-price">$199.99</div>
-                        <p class="product-description">Track your fitness, receive notifications, and monitor your health with this advanced smartwatch.</p>
-                        <a href="products.html" class="btn btn-outline">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="products.html" class="btn">View All Products</a>
-            </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-light">
+    <section class="services section-padding" id="services">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer more than just products - experience our comprehensive services</p>
-            </div>
+            <h2>Our Premium Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🚚</div>
-                    <h3>Fast Delivery</h3>
-                    <p>We offer reliable and timely delivery services across Juba with real-time tracking for your peace of mind.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Custom Home Remodeling</h3>
+                    <p>Complete home transformations tailored to your lifestyle and preferences, using the finest materials and craftsmanship.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Tech Solutions</h3>
-                    <p>From smartphones to laptops, we provide the latest technology with setup assistance and support.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Kitchen Renovations</h3>
+                    <p>Luxurious kitchen designs that blend functionality with aesthetics, creating the heart of your home.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Educational Tech</h3>
-                    <p>Specialized technology solutions for students and educators to enhance learning experiences.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Bathroom Remodels</h3>
+                    <p>Spa-like bathroom retreats designed for relaxation and elegance, with attention to every detail.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💳</div>
-                    <h3>Secure Payments</h3>
-                    <p>Multiple payment options with bank-level security to ensure your transactions are safe and convenient.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </div>
+                    <h3>Home Additions</h3>
+                    <p>Seamless home expansions that increase your living space while enhancing your property's value.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Custom Cabinetry</h3>
+                    <p>Handcrafted cabinetry and built-ins that maximize space and reflect your personal style.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Luxury Finishes</h3>
+                    <p>Premium finishes and details that elevate your space with sophistication and timeless appeal.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
+            <div class="text-center" style="margin-top: 50px;">
                 <a href="services.html" class="btn">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us section-padding" id="why-choose-us">
+        <div class="container">
+            <h2>Why Choose ABC Remodelers</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>18 Years of Excellence</h3>
+                    <p>Nearly two decades of transforming homes with exceptional craftsmanship and attention to detail.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our skilled craftsmen, designers, and project managers collaborate to bring your vision to life.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Quality Guarantee</h3>
+                    <p>We stand behind our work with comprehensive warranties and a commitment to your satisfaction.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>On-Time Completion</h3>
+                    <p>We respect your time and complete projects on schedule with minimal disruption to your life.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Transparent Process</h3>
+                    <p>Clear communication, detailed proposals, and no hidden costs throughout your project.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Premium Materials</h3>
+                    <p>We use only the highest quality materials from trusted suppliers for lasting beauty and durability.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="why-choose-us.html" class="btn btn-light">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+                <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
+                <button class="filter-btn" data-filter="addition">Additions</button>
+                <button class="filter-btn" data-filter="whole-home">Whole Home</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Kitchen Renovation" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Kitchen</h3>
+                        <p>Complete transformation with custom cabinetry and premium appliances</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Luxury Bathroom" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Spa Bathroom</h3>
+                        <p>Luxurious master bath with freestanding tub and custom tile work</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="whole-home">
+                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80" alt="Whole Home Remodel" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Traditional Home</h3>
+                        <p>Complete whole-home renovation preserving historical details</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="addition">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Home Addition" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Second Story Addition</h3>
+                        <p>Expanded living space with seamless architectural integration</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Contemporary Kitchen" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Contemporary Kitchen</h3>
+                        <p>Open concept design with waterfall island and professional grade appliances</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Powder Room" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Powder Room</h3>
+                        <p>Elegant powder room with custom vanity and designer fixtures</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="portfolio.html" class="btn">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding" id="process">
+        <div class="container">
+            <h2>Our Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, needs, and budget to understand your project goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>Our designers create detailed plans and 3D renderings of your future space.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Material Selection</h3>
+                    <p>We help you choose premium materials that match your style and budget.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Construction</h3>
+                    <p>Our skilled craftsmen bring the design to life with precision and care.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Final Walkthrough</h3>
+                    <p>We ensure every detail meets your expectations before project completion.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="our-process.html" class="btn">Learn About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">"ABC Remodelers transformed our outdated kitchen into a stunning modern space we absolutely love. Their attention to detail and professionalism exceeded our expectations. The project was completed on time and within budget."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Sarah Johnson" class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Barrington Hills, IL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"We added a second story to our home and ABC Remodelers made the process seamless. Their team was respectful, clean, and highly skilled. The quality of their work is exceptional and we couldn't be happier with our expanded living space."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Michael Thompson" class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Michael Thompson</h4>
+                            <p>Glenview, IL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"From design to completion, ABC Remodelers demonstrated expertise and craftsmanship. Our master bathroom now feels like a luxury spa. They listened to our ideas and incorporated them beautifully while offering valuable suggestions."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jennifer Lee" class="author-img" loading="lazy">
+                        <div class="author-info">
+                            <h4>Jennifer Lee</h4>
+                            <p>Evanston, IL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="testimonial.html" class="btn btn-light">Read More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ABC Remodelers Team" loading="lazy">
+                    <div class="about-experience">
+                        <h3>18</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Premier Remodeling Contractor Serving Chicagoland Since 2005</h3>
+                    <p>Founded by John and Michael Anderson, ABC Remodelers has been transforming homes across the Chicago metropolitan area for nearly two decades. Our commitment to quality craftsmanship, attention to detail, and exceptional customer service has made us the preferred choice for discerning homeowners.</p>
+                    <p>We believe that your home should be a reflection of your lifestyle and personal taste. Our team of skilled craftsmen, designers, and project managers work collaboratively to bring your vision to life while ensuring the process is seamless and enjoyable.</p>
+                    <div class="certifications">
+                        <h4>Certifications & Affiliations</h4>
+                        <p>National Association of Home Builders (NAHB)</p>
+                        <p>National Kitchen & Bath Association (NKBA)</p>
+                        <p>EPA Lead-Safe Certified Firm</p>
+                        <p>Better Business Bureau A+ Rating</p>
+                    </div>
+                    <a href="about.html" class="btn" style="margin-top: 20px;">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>650+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Industry Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Start Your Transformation Today</h3>
+                    <p>Contact us to schedule a complimentary consultation. We'll discuss your project vision, provide initial insights, and explain our process.</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Our Office</h4>
+                            <p>123 Remodeling Way, Suite 100<br>Chicago, IL 60601</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>(847) 555-1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@abcremodelers.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <select required>
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="kitchen">Kitchen Remodeling</option>
+                            <option value="bathroom">Bathroom Remodeling</option>
+                            <option value="addition">Home Addition</option>
+                            <option value="whole-home">Whole Home Remodel</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Tell us about your project..." required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -175,51 +453,66 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>JunubMart</h3>
-                    <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
+                    <h3>ABC Remodelers</h3>
+                    <p>Premier residential remodeling contractors serving the Chicagoland area with exceptional craftsmanship and unparalleled service since 2005.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">t</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">ig</a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Customer Service</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                        <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                        <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                        <li><a href="services.html#home-additions">Home Additions</a></li>
+                        <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                        <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
-                    </form>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 JunubMart. All rights reserved. | Designed with ❤️ in Juba, South Sudan</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Remodelers. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Project Image" class="modal-img">
+                <h3 class="modal-title"></h3>
+                <p class="modal-description"></p>
+                <div class="modal-details"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
