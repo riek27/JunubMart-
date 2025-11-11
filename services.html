@@ -3,206 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - JunubMart | Premium Online Store in Juba, South Sudan</title>
-    <meta name="description" content="Discover JunubMart's comprehensive services including fast delivery, tech solutions, educational tech, and secure payments in Juba, South Sudan.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <title>Our Services | ABC Remodelers</title>
+    <meta name="description" content="Explore ABC Remodelers' comprehensive home remodeling services including kitchen renovations, bathroom remodels, home additions, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <!-- Header & Navigation -->
-    <header id="header">
+    <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">Junub<span>Mart</span></a>
+                <a href="index.html" class="logo">ABC <span>Remodelers</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                            <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                            <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                            <li><a href="services.html#home-additions">Home Additions</a></li>
+                            <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                            <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li class="dropdown">
+                        <a href="#!">More <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li><a href="our-process.html">Our Process</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Page Content -->
-    <main class="page-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JunubMart Services">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>Our Services</h1>
-                <p>Comprehensive solutions to enhance your shopping experience</p>
-            </div>
-        </section>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive home remodeling solutions tailored to your vision and lifestyle.</p>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section>
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Services</h2>
-                    <p>We offer more than just products - experience our comprehensive services</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🚚</div>
-                        <h3>Fast Delivery</h3>
-                        <p>We offer reliable and timely delivery services across Juba with real-time tracking for your peace of mind. Our delivery team is trained to handle your products with care and ensure they reach you in perfect condition.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>Same-day delivery in Juba</li>
-                            <li>Real-time package tracking</li>
-                            <li>Careful handling of all items</li>
-                            <li>Flexible delivery time slots</li>
-                        </ul>
+    <!-- Services Overview -->
+    <section class="services section-padding">
+        <div class="container">
+            <h2>Premium Remodeling Services</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">
+                From complete home transformations to specialized room renovations, we offer a full range of remodeling services 
+                designed to enhance your living experience and increase your property value.
+            </p>
+            
+            <!-- Custom Home Remodeling -->
+            <div class="service-detail" id="custom-home-remodeling">
+                <div class="about-content" style="margin-bottom: 100px;">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80" alt="Whole Home Remodeling" loading="lazy">
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">📱</div>
-                        <h3>Tech Solutions</h3>
-                        <p>From smartphones to laptops, we provide the latest technology with setup assistance and support. Our tech experts can help you choose the right devices and ensure they're properly configured for your needs.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>Device setup and configuration</li>
-                            <li>Technical support and troubleshooting</li>
-                            <li>Product recommendations</li>
-                            <li>Warranty and after-sales service</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🎓</div>
-                        <h3>Educational Tech</h3>
-                        <p>Specialized technology solutions for students and educators to enhance learning experiences. We offer educational discounts and tailored solutions for schools and educational institutions.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>Educational software and apps</li>
-                            <li>Tablets and laptops for students</li>
-                            <li>Classroom technology solutions</li>
-                            <li>Educational institution discounts</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💳</div>
-                        <h3>Secure Payments</h3>
-                        <p>Multiple payment options with bank-level security to ensure your transactions are safe and convenient. We support various payment methods to make shopping with us hassle-free.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>Credit and debit card payments</li>
-                            <li>Mobile money transactions</li>
-                            <li>Cash on delivery option</li>
-                            <li>Secure encrypted transactions</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔄</div>
-                        <h3>Easy Returns</h3>
-                        <p>Hassle-free return policy within 14 days if you're not completely satisfied with your purchase. Our customer service team makes the return process simple and straightforward.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>14-day return policy</li>
-                            <li>No-questions-asked returns</li>
-                            <li>Free return shipping</li>
-                            <li>Quick refund processing</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">📞</div>
-                        <h3>Customer Support</h3>
-                        <p>Our dedicated support team is available to assist you with any questions or concerns. We're committed to providing exceptional customer service at every step of your shopping journey.</p>
-                        <ul style="text-align: left; margin-top: 15px;">
-                            <li>24/7 customer support</li>
-                            <li>Multiple contact channels</li>
-                            <li>Product expertise</li>
-                            <li>Quick response times</li>
-                        </ul>
+                    <div class="about-text">
+                        <h3>Custom Home Remodeling</h3>
+                        <p>Transform your entire living space with our comprehensive whole-home remodeling services. We work with you to reimagine your home's layout, flow, and functionality while preserving its unique character.</p>
+                        <div class="certifications">
+                            <h4>What's Included:</h4>
+                            <p>Complete interior and exterior renovations</p>
+                            <p>Architectural redesign and space planning</p>
+                            <p>Structural modifications and updates</p>
+                            <p>Custom millwork and built-ins</p>
+                            <p>HVAC, electrical, and plumbing system upgrades</p>
+                        </div>
+                        <a href="contact.html" class="btn" style="margin-top: 20px;">Schedule Consultation</a>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Service Process Section -->
-        <section class="section-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>How It Works</h2>
-                    <p>Simple steps to get the products you need</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">1</div>
-                        <h3>Browse & Select</h3>
-                        <p>Explore our wide range of products and add your favorites to the cart. Use our search and filter options to find exactly what you're looking for.</p>
+            <!-- Kitchen Renovations -->
+            <div class="service-detail" id="kitchen-renovations">
+                <div class="about-content" style="margin-bottom: 100px; flex-direction: row-reverse;">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchen Renovation" loading="lazy">
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">2</div>
-                        <h3>Place Order</h3>
-                        <p>Complete your purchase with our secure checkout process. Choose your preferred payment method and provide delivery details.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">3</div>
-                        <h3>Fast Delivery</h3>
-                        <p>We process your order quickly and deliver it to your doorstep. Track your order in real-time and receive notifications about its status.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">4</div>
-                        <h3>Enjoy & Support</h3>
-                        <p>Receive your products and enjoy them. Our customer support team is always available if you need any assistance.</p>
+                    <div class="about-text">
+                        <h3>Kitchen Renovations</h3>
+                        <p>Create the kitchen of your dreams with our expert design and renovation services. We combine functionality with aesthetics to deliver spaces that are both beautiful and practical for everyday living.</p>
+                        <div class="certifications">
+                            <h4>Our Kitchen Services:</h4>
+                            <p>Custom cabinet design and installation</p>
+                            <p>Countertop selection and installation</p>
+                            <p>Professional appliance integration</p>
+                            <p>Lighting design and installation</p>
+                            <p>Flooring and backsplash solutions</p>
+                            <p>Island and seating area design</p>
+                        </div>
+                        <a href="portfolio.html" class="btn btn-light" style="margin-top: 20px;">View Kitchen Projects</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <!-- Bathroom Remodels -->
+            <div class="service-detail" id="bathroom-remodels">
+                <div class="about-content" style="margin-bottom: 100px;">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Bathroom Remodel" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <h3>Bathroom Remodels</h3>
+                        <p>Transform your bathroom into a personal sanctuary with our luxury remodeling services. We specialize in creating spa-like retreats that combine relaxation with sophisticated design.</p>
+                        <div class="certifications">
+                            <h4>Bathroom Services:</h4>
+                            <p>Master bathroom luxury renovations</p>
+                            <p>Guest and powder room updates</p>
+                            <p>Walk-in shower and tub installations</p>
+                            <p>Custom vanity and storage solutions</p>
+                            <p>Tile work and flooring</p>
+                            <p>Plumbing fixture upgrades</p>
+                        </div>
+                        <a href="contact.html" class="btn" style="margin-top: 20px;">Get Bathroom Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services Grid -->
+            <h2 style="margin-top: 50px;">Additional Services</h2>
+            <div class="services-grid">
+                <div class="service-card" id="home-additions">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-square"></i>
+                    </div>
+                    <h3>Home Additions</h3>
+                    <p>Expand your living space with seamless home additions that blend perfectly with your existing architecture and increase your property value.</p>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>Second-story additions</li>
+                        <li>Room extensions</li>
+                        <li>Sunroom and conservatory additions</li>
+                        <li>Garage conversions</li>
+                    </ul>
+                </div>
+                <div class="service-card" id="custom-cabinetry">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Custom Cabinetry</h3>
+                    <p>Handcrafted cabinetry and built-ins designed to maximize space and reflect your personal style throughout your home.</p>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>Custom kitchen cabinets</li>
+                        <li>Bathroom vanities</li>
+                        <li>Built-in shelving and storage</li>
+                        <li>Entertainment centers</li>
+                    </ul>
+                </div>
+                <div class="service-card" id="luxury-finishes">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Luxury Finishes</h3>
+                    <p>Premium finishes and details that elevate your space with sophistication, quality, and timeless appeal.</p>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>Hardwood flooring</li>
+                        <li>Custom trim and molding</li>
+                        <li>Designer lighting fixtures</li>
+                        <li>High-end hardware</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding" style="background: var(--primary-light);">
+        <div class="container">
+            <h2>Our Service Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>We discuss your vision, needs, and budget to understand your project goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>Our designers create detailed plans and 3D renderings of your future space.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Material Selection</h3>
+                    <p>We help you choose premium materials that match your style and budget.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Construction</h3>
+                    <p>Our skilled craftsmen bring the design to life with precision and care.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Final Walkthrough</h3>
+                    <p>We ensure every detail meets your expectations before project completion.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="our-process.html" class="btn">Learn More About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="testimonials section-padding" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80') no-repeat center center/cover;">
+        <div class="container">
+            <h2>Ready to Transform Your Home?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today to schedule a consultation and get started on your dream renovation.</p>
+            <a href="contact.html" class="btn">Get Free Estimate</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>JunubMart</h3>
-                    <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
+                    <h3>ABC Remodelers</h3>
+                    <p>Premier residential remodeling contractors serving the Chicagoland area with exceptional craftsmanship and unparalleled service since 2005.</p>
                     <div class="social-links">
-                        <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Customer Service</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                        <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                        <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                        <li><a href="services.html#home-additions">Home Additions</a></li>
+                        <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                        <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
-                    </form>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 JunubMart. All rights reserved. | Designed with ❤️ in Juba, South Sudan</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Remodelers. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
