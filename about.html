@@ -3,162 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - JunubMart | Premium Online Store in Juba, South Sudan</title>
-    <meta name="description" content="Learn about JunubMart's story, mission, and vision. Discover how we're revolutionizing online shopping in South Sudan.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <title>About Us | ABC Remodelers</title>
+    <meta name="description" content="Learn about ABC Remodelers - Chicago's premier home remodeling experts with 18 years of experience and exceptional craftsmanship.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
     <!-- Header & Navigation -->
-    <header id="header">
+    <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">Junub<span>Mart</span></a>
+                <a href="index.html" class="logo">ABC <span>Remodelers</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                            <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                            <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                            <li><a href="services.html#home-additions">Home Additions</a></li>
+                            <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                            <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li class="dropdown">
+                        <a href="#!">More <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li><a href="our-process.html">Our Process</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Page Content -->
-    <main class="page-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="About JunubMart">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>About JunubMart</h1>
-                <p>Learn about our journey, values, and commitment to serving South Sudan</p>
-            </div>
-        </section>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>About ABC Remodelers</h1>
+            <p>Learn about our story, values, and the team behind Chicago's premier remodeling company.</p>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section class="section-light">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JunubMart Team">
+    <!-- About Content -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="ABC Remodelers Team" loading="lazy">
+                    <div class="about-experience">
+                        <h3>18</h3>
+                        <p>Years of Excellence</p>
                     </div>
-                    <div class="about-text">
-                        <h2>Our Story</h2>
-                        <p>JunubMart was founded in 2020 with a vision to revolutionize online shopping in South Sudan. We understand the unique challenges and opportunities in our market and are committed to providing solutions that make life easier for our customers.</p>
-                        <p>Our journey began with a simple observation: South Sudanese consumers deserved better access to quality products without the hassle of traditional shopping. We set out to create an e-commerce platform that combines convenience, reliability, and exceptional customer service.</p>
-                        <p>Today, JunubMart has grown into a trusted name in Juba and beyond, serving thousands of satisfied customers with a wide range of products from electronics to fashion, home goods to educational materials.</p>
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <h3>Premier Remodeling Contractor Serving Chicagoland Since 2005</h3>
+                    <p>Founded by brothers John and Michael Anderson, ABC Remodelers has been transforming homes across the Chicago metropolitan area for nearly two decades. What started as a small family business with a focus on quality craftsmanship has grown into one of the region's most trusted remodeling companies.</p>
+                    <p>Our founders believed that remodeling should be a collaborative, transparent process that respects both the homeowner's vision and their investment. This philosophy remains at the core of everything we do today.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To transform living spaces through exceptional craftsmanship, innovative design, and unparalleled customer service, creating homes that inspire and endure for generations.</p>
+                    
+                    <h3>Our Values</h3>
+                    <div class="certifications">
+                        <p><strong>Quality Craftsmanship:</strong> We never compromise on materials or workmanship, ensuring every project meets our exacting standards.</p>
+                        <p><strong>Integrity:</strong> We operate with complete transparency, providing honest assessments and fair pricing.</p>
+                        <p><strong>Innovation:</strong> We stay current with design trends and building technologies to deliver cutting-edge solutions.</p>
+                        <p><strong>Customer Focus:</strong> Your satisfaction is our ultimate measure of success.</p>
+                    </div>
+                    
+                    <div class="certifications">
+                        <h4>Certifications & Affiliations</h4>
+                        <p>National Association of Home Builders (NAHB)</p>
+                        <p>National Kitchen & Bath Association (NKBA)</p>
+                        <p>EPA Lead-Safe Certified Firm</p>
+                        <p>Better Business Bureau A+ Rating</p>
+                        <p>Illinois Licensed Remodeling Contractor</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Mission & Vision Section -->
-        <section>
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Mission & Vision</h2>
-                    <p>Driving progress through innovative e-commerce solutions</p>
+    <!-- Team Section -->
+    <section class="services section-padding" style="background: var(--primary-light);">
+        <div class="container">
+            <h2>Meet Our Leadership Team</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>John Anderson</h3>
+                    <p><strong>Co-Founder & President</strong></p>
+                    <p>With over 25 years in the construction industry, John oversees all operations and maintains our commitment to quality and customer satisfaction.</p>
                 </div>
-                <div class="mission-vision">
-                    <div class="mission">
-                        <h3>Our Mission</h3>
-                        <p>To provide convenient access to quality products through innovative e-commerce solutions that empower communities and drive economic growth in South Sudan. We strive to bridge the gap between local consumers and global markets while supporting local businesses and entrepreneurs.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <div class="vision">
-                        <h3>Our Vision</h3>
-                        <p>To become the leading online marketplace in South Sudan, known for reliability, quality, and exceptional customer service. We envision a future where every South Sudanese citizen has equal access to the products they need to thrive, regardless of their location.</p>
+                    <h3>Michael Anderson</h3>
+                    <p><strong>Co-Founder & Design Director</strong></p>
+                    <p>Michael leads our design team, bringing creative vision and technical expertise to every project, ensuring beautiful and functional spaces.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
                     </div>
+                    <h3>Robert Johnson</h3>
+                    <p><strong>Construction Manager</strong></p>
+                    <p>Robert manages our field operations, coordinating our skilled craftsmen and ensuring projects are completed on time and to specification.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Values Section -->
-        <section class="section-light">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Values</h2>
-                    <p>The principles that guide everything we do</p>
+    <!-- Stats Section -->
+    <section class="stats section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>650+</h3>
+                    <p>Projects Completed</p>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🤝</div>
-                        <h3>Trust & Integrity</h3>
-                        <p>We build lasting relationships with our customers through transparency, honesty, and reliability in all our interactions.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💡</div>
-                        <h3>Innovation</h3>
-                        <p>We continuously seek new ways to improve our services and adapt to the evolving needs of the South Sudanese market.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🌍</div>
-                        <h3>Community Focus</h3>
-                        <p>We're committed to supporting local businesses and contributing to the economic development of South Sudan.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">⭐</div>
-                        <h3>Excellence</h3>
-                        <p>We strive for the highest standards in product quality, customer service, and overall shopping experience.</p>
-                    </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Industry Awards</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="testimonials section-padding" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80') no-repeat center center/cover;">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Contact us today to schedule a consultation with our team of experts.</p>
+            <a href="contact.html" class="btn">Get In Touch</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>JunubMart</h3>
-                    <p>Your premium online shopping destination in Juba, South Sudan. Quality products, fast delivery, and exceptional service.</p>
+                    <h3>ABC Remodelers</h3>
+                    <p>Premier residential remodeling contractors serving the Chicagoland area with exceptional craftsmanship and unparalleled service since 2005.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">t</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">ig</a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Customer Service</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                        <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                        <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                        <li><a href="services.html#home-additions">Home Additions</a></li>
+                        <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                        <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Subscribe</button>
-                    </form>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 JunubMart. All rights reserved. | Designed with ❤️ in Juba, South Sudan</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Remodelers. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
