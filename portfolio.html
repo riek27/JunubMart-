@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | ABC Remodelers</title>
+    <meta name="description" content="View ABC Remodelers' portfolio of completed kitchen, bathroom, and whole home remodeling projects in the Chicago area.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="pageLoader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">ABC <span>Remodelers</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                            <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                            <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                            <li><a href="services.html#home-additions">Home Additions</a></li>
+                            <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                            <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li class="dropdown">
+                        <a href="#!">More <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="why-choose-us.html">Why Choose Us</a></li>
+                            <li><a href="our-process.html">Our Process</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Explore our gallery of completed remodeling projects showcasing our craftsmanship and attention to detail.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section-padding">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+                <button class="filter-btn" data-filter="bathroom">Bathrooms</button>
+                <button class="filter-btn" data-filter="addition">Additions</button>
+                <button class="filter-btn" data-filter="whole-home">Whole Home</button>
+                <button class="filter-btn" data-filter="custom">Custom Work</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Kitchen Projects -->
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Kitchen Renovation" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Kitchen</h3>
+                        <p>Complete transformation with custom cabinetry and premium appliances</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Contemporary Kitchen" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Contemporary Kitchen</h3>
+                        <p>Open concept design with waterfall island and professional grade appliances</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="kitchen">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Traditional Kitchen" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Traditional Kitchen</h3>
+                        <p>Warm, classic design with custom shaker cabinets and marble countertops</p>
+                    </div>
+                </div>
+
+                <!-- Bathroom Projects -->
+                <div class="portfolio-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Luxury Bathroom" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Spa Bathroom</h3>
+                        <p>Luxurious master bath with freestanding tub and custom tile work</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Powder Room" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Powder Room</h3>
+                        <p>Elegant powder room with custom vanity and designer fixtures</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="bathroom">
+                    <img src="https://images.unsplash.com/photo-1630563557898-434e0add531d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Modern Bathroom" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Bathroom</h3>
+                        <p>Clean, minimalist design with floating vanity and walk-in shower</p>
+                    </div>
+                </div>
+
+                <!-- Whole Home Projects -->
+                <div class="portfolio-item" data-category="whole-home">
+                    <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80" alt="Whole Home Remodel" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Traditional Home</h3>
+                        <p>Complete whole-home renovation preserving historical details</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="whole-home">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern Home" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Home</h3>
+                        <p>Contemporary whole-home transformation with open floor plan</p>
+                    </div>
+                </div>
+
+                <!-- Addition Projects -->
+                <div class="portfolio-item" data-category="addition">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Home Addition" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Second Story Addition</h3>
+                        <p>Expanded living space with seamless architectural integration</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="addition">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sunroom Addition" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Sunroom Addition</h3>
+                        <p>Bright, airy addition bringing the outdoors inside</p>
+                    </div>
+                </div>
+
+                <!-- Custom Work -->
+                <div class="portfolio-item" data-category="custom">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Custom Cabinetry" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Custom Library</h3>
+                        <p>Handcrafted built-in shelving and reading nook</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="custom">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Wine Cellar" class="portfolio-img" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h3>Custom Wine Cellar</h3>
+                        <p>Temperature-controlled wine storage with custom racking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Showcase -->
+    <section class="services section-padding" style="background: var(--primary-light);">
+        <div class="container">
+            <h2>Featured Project: Lincoln Park Kitchen</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Lincoln Park Kitchen" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>Complete Kitchen Transformation</h3>
+                    <p>This Lincoln Park home underwent a dramatic kitchen transformation that completely reimagined the space. The outdated layout was replaced with an open-concept design that maximizes both functionality and aesthetic appeal.</p>
+                    <div class="certifications">
+                        <h4>Project Highlights:</h4>
+                        <p>Custom shaker-style cabinetry with soft-close features</p>
+                        <p>Quartz waterfall island with seating for four</p>
+                        <p>Professional-grade appliance package</p>
+                        <p>Custom tile backsplash and under-cabinet lighting</p>
+                        <p>Hardwood flooring throughout</p>
+                        <p>Integrated smart home features</p>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <h4>Project Details</h4>
+                        <p><strong>Timeline:</strong> 8 weeks</p>
+                        <p><strong>Location:</strong> Lincoln Park, Chicago</p>
+                        <p><strong>Scope:</strong> Complete kitchen remodel with structural modifications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>650+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>18</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Industry Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="testimonials section-padding" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80') no-repeat center center/cover;">
+        <div class="container">
+            <h2>Inspired By Our Work?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Let's discuss how we can bring your vision to life with the same quality and attention to detail.</p>
+            <a href="contact.html" class="btn">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ABC Remodelers</h3>
+                    <p>Premier residential remodeling contractors serving the Chicagoland area with exceptional craftsmanship and unparalleled service since 2005.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#custom-home-remodeling">Custom Home Remodeling</a></li>
+                        <li><a href="services.html#kitchen-renovations">Kitchen Renovations</a></li>
+                        <li><a href="services.html#bathroom-remodels">Bathroom Remodels</a></li>
+                        <li><a href="services.html#home-additions">Home Additions</a></li>
+                        <li><a href="services.html#custom-cabinetry">Custom Cabinetry</a></li>
+                        <li><a href="services.html#luxury-finishes">Luxury Finishes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Remodelers. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Project Image" class="modal-img">
+                <h3 class="modal-title"></h3>
+                <p class="modal-description"></p>
+                <div class="modal-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
