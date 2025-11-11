@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | ABC Remodelers</title>
+    <meta name="description" content="Get expert remodeling tips, trends, and inspiration from ABC Remodelers' blog.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-gold: #c9a74d;
+            --primary-light: #f8f8f8;
+            --text-dark: #333;
+            --text-light: #777;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--primary-light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #b3933f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Styles */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+        }
+
+        .blog-meta i {
+            color: var(--primary-gold);
+            margin-right: 5px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Article Content Styling */
+        .article-content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-preview {
+            max-height: 120px;
+            overflow: hidden;
+            position: relative;
+            transition: max-height 0.5s ease;
+        }
+
+        .article-preview::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(transparent, var(--white));
+        }
+
+        .article-full {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .article-expanded .article-preview {
+            max-height: 0;
+        }
+
+        .article-expanded .article-preview::after {
+            opacity: 0;
+        }
+
+        .article-expanded .article-full {
+            max-height: 2000px;
+            opacity: 1;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .read-more-btn:hover {
+            background: var(--primary-gold);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 167, 77, 0.3);
+        }
+
+        .read-more-btn i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-expanded .read-more-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .newsletter input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 80px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: var(--primary-dark);
+                margin: 5px 0;
+                transition: var(--transition);
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-hero p {
+                font-size: 1rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">ABC <span>Remodelers</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Remodeling Blog</h1>
+            <p>Expert tips, trends, and inspiration for your next home renovation project.</p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="services section-padding">
+        <div class="container">
+            <h2>Latest Articles</h2>
+            
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchen Trends 2024" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="far fa-folder"></i> Kitchen Design</span>
+                        </div>
+                        <h3>Top Kitchen Design Trends for 2024</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Discover the latest kitchen design trends that are transforming homes this year. From smart technology integration to sustainable materials, learn what's hot in kitchen remodeling...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Discover the latest kitchen design trends that are transforming homes this year. From smart technology integration to sustainable materials, learn what's hot in kitchen remodeling and how to incorporate these trends into your own space.</p>
+                                <p>We explore the movement toward warmer tones, mixed materials, and multifunctional islands that serve as both prep space and social hub. Learn which features provide the best return on investment and which trends are here to stay.</p>
+                                <p>This year, we're seeing a shift away from all-white kitchens toward more personality-infused designs. Think bold backsplashes, statement range hoods, and custom cabinetry with unique details. The emphasis is on creating spaces that reflect individual style while maintaining functionality.</p>
+                                <p>Smart storage solutions continue to evolve, with integrated organizers, pull-out pantries, and specialized compartments for everything from spices to small appliances. These innovations help maintain a clutter-free environment while keeping essentials within easy reach.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Bathroom Remodeling" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> February 28, 2024</span>
+                            <span><i class="far fa-folder"></i> Bathrooms</span>
+                        </div>
+                        <h3>Creating a Spa-Like Bathroom Retreat</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Transform your ordinary bathroom into a luxurious spa-like retreat with these design tips and feature recommendations that promote relaxation and wellness. Learn how to create...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Transform your ordinary bathroom into a luxurious spa-like retreat with these design tips and feature recommendations that promote relaxation and wellness. Learn how to create a personal sanctuary where you can unwind after a long day.</p>
+                                <p>Start with a freestanding tub as the centerpiece of your spa bathroom. These elegant fixtures not only make a visual statement but also provide a comfortable soaking experience. Pair it with a rainfall showerhead and body jets for a complete hydrotherapy experience.</p>
+                                <p>Consider incorporating natural elements like stone, wood, and plants to create a connection with nature. Heated floors, towel warmers, and ambient lighting can elevate the comfort level of your space. Don't forget about storage solutions that keep countertops clear and contribute to the serene atmosphere.</p>
+                                <p>For the ultimate spa experience, add features like a steam shower, chromotherapy lighting, or even a small sauna if space allows. These elements transform your daily routine into a therapeutic ritual that supports both physical and mental well-being.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80" alt="Home Additions" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> February 15, 2024</span>
+                            <span><i class="far fa-folder"></i> Home Additions</span>
+                        </div>
+                        <h3>Planning a Successful Home Addition</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Considering adding space to your home? Learn the key factors to consider, from budgeting and permits to design considerations that ensure a seamless integration with your existing structure...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Considering adding space to your home? Learn the key factors to consider, from budgeting and permits to design considerations that ensure a seamless integration with your existing structure.</p>
+                                <p>A well-planned home addition can dramatically improve your quality of life and increase your property value. Before breaking ground, it's essential to establish clear goals for the new space. Are you creating a master suite, expanding your kitchen, or adding a home office?</p>
+                                <p>Work with an architect or designer to create plans that complement your home's existing architecture while meeting your functional needs. Consider how the addition will affect traffic flow, natural light, and outdoor spaces. Proper planning at this stage can prevent costly changes later in the process.</p>
+                                <p>Budgeting for a home addition requires careful consideration of both construction costs and potential increases in property taxes and insurance. Always include a contingency fund of 10-20% for unexpected expenses that may arise during construction.</p>
+                                <p>Navigating the permit process is another critical step. Your contractor should be familiar with local building codes and zoning regulations to ensure your addition complies with all requirements. This includes considerations for setbacks, height restrictions, and historical district guidelines if applicable.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sustainable Materials" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 30, 2024</span>
+                            <span><i class="far fa-folder"></i> Materials</span>
+                        </div>
+                        <h3>Sustainable Materials for Eco-Friendly Remodeling</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Explore the latest sustainable building materials that reduce environmental impact without compromising on style or durability in your remodeling project. From reclaimed wood to recycled countertops...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Explore the latest sustainable building materials that reduce environmental impact without compromising on style or durability in your remodeling project. From reclaimed wood to recycled countertops, discover options that align with your environmental values.</p>
+                                <p>Bamboo has emerged as a popular sustainable choice for flooring and cabinetry. As one of the fastest-growing plants on Earth, bamboo can be harvested every 3-5 years without killing the plant. It's durable, attractive, and available in various stains and finishes to match any design aesthetic.</p>
+                                <p>Recycled glass countertops offer a unique and eco-friendly alternative to traditional stone surfaces. Made from post-consumer glass embedded in a cement or resin base, these countertops are durable, heat-resistant, and available in a wide range of colors and patterns.</p>
+                                <p>For insulation, consider materials like sheep's wool, cellulose (made from recycled newspaper), or cork. These natural options provide excellent thermal performance while avoiding the chemicals found in some conventional insulation materials.</p>
+                                <p>When selecting paints and finishes, look for low-VOC (volatile organic compound) or zero-VOC options. These products improve indoor air quality by reducing the release of harmful chemicals into your home environment.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" alt="Budget Planning" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 18, 2024</span>
+                            <span><i class="far fa-folder"></i> Planning</span>
+                        </div>
+                        <h3>How to Budget for Your Remodeling Project</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Get expert advice on creating a realistic budget for your home renovation, including common cost considerations and tips for maximizing your investment. Learn how to allocate funds effectively...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Get expert advice on creating a realistic budget for your home renovation, including common cost considerations and tips for maximizing your investment. Learn how to allocate funds effectively across different aspects of your project.</p>
+                                <p>Start by determining your overall budget based on your financing options and the value of your home. As a general rule, kitchen and bathroom remodels typically offer the highest return on investment, while more personalized projects may not recoup their full cost.</p>
+                                <p>Break down your budget into categories: labor, materials, fixtures and appliances, permits, design fees, and contingency. Labor typically accounts for 20-35% of a remodeling budget, while materials make up the bulk of the remaining costs.</p>
+                                <p>Always include a contingency fund of 10-20% for unexpected expenses. Even with thorough planning, remodeling projects often uncover issues like structural problems, outdated wiring, or plumbing issues that need to be addressed.</p>
+                                <p>Consider phasing your project if your budget is tight. Completing a renovation in stages allows you to spread costs over time while still working toward your ultimate vision. Just be sure to plan each phase carefully to avoid rework or compatibility issues down the line.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+
+                <!-- Article 6 -->
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Smart Homes" class="blog-img" loading="lazy">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> January 5, 2024</span>
+                            <span><i class="far fa-folder"></i> Technology</span>
+                        </div>
+                        <h3>Integrating Smart Home Technology in Renovations</h3>
+                        <div class="article-content">
+                            <div class="article-preview">
+                                <p>Learn how to seamlessly incorporate smart home features during your renovation, from lighting and climate control to security and entertainment systems. Discover the latest innovations...</p>
+                            </div>
+                            <div class="article-full">
+                                <p>Learn how to seamlessly incorporate smart home features during your renovation, from lighting and climate control to security and entertainment systems. Discover the latest innovations that can enhance convenience, security, and energy efficiency in your home.</p>
+                                <p>Smart lighting systems allow you to control ambiance with the touch of a button or voice command. Consider installing smart switches, dimmers, and bulbs that can be programmed to create different scenes for various activities or times of day.</p>
+                                <p>Climate control is another area where smart technology excels. Smart thermostats learn your schedule and preferences to optimize energy usage while maintaining comfort. Some models can even detect open windows and adjust accordingly.</p>
+                                <p>For security, smart locks, video doorbells, and security cameras provide peace of mind whether you're at home or away. These systems often integrate with other smart home features, allowing you to create automated routines like turning on lights when motion is detected.</p>
+                                <p>When planning your renovation, work with your contractor to ensure proper wiring and infrastructure to support your smart home goals. Consider future-proofing by installing conduit that makes it easy to upgrade technology as new innovations emerge.</p>
+                            </div>
+                        </div>
+                        <button class="read-more-btn">Read More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="text-center" style="margin-top: 80px; padding: 60px; background: var(--white); border-radius: 8px; box-shadow: var(--shadow);">
+                <h3>Stay Updated with Our Latest Tips</h3>
+                <p style="max-width: 600px; margin: 20px auto;">Subscribe to our newsletter and get the latest remodeling trends, tips, and inspiration delivered to your inbox.</p>
+                <div class="newsletter" style="max-width: 500px; margin: 30px auto;">
+                    <input type="email" placeholder="Your Email Address">
+                    <button class="btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ABC Remodelers</h3>
+                    <p>Premier residential remodeling contractors serving the Chicagoland area with exceptional craftsmanship and unparalleled service since 2005.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="testimonial.html">Testimonials</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Custom Home Remodeling</a></li>
+                        <li><a href="services.html">Kitchen Renovations</a></li>
+                        <li><a href="services.html">Bathroom Remodels</a></li>
+                        <li><a href="services.html">Home Additions</a></li>
+                        <li><a href="services.html">Custom Cabinetry</a></li>
+                        <li><a href="services.html">Luxury Finishes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for remodeling tips, trends, and special offers.</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button class="btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ABC Remodelers. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Prevent body scrolling when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Read More/Less Functionality
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const articleContent = this.parentElement.querySelector('.article-content');
+                const isExpanded = articleContent.classList.contains('article-expanded');
+                
+                // Toggle the expanded class
+                articleContent.classList.toggle('article-expanded');
+                
+                // Update button text and icon
+                if (isExpanded) {
+                    this.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
+                } else {
+                    this.innerHTML = 'Read Less <i class="fas fa-chevron-up"></i>';
+                }
+            });
+        });
+
+        // Newsletter Form
+        const newsletterForm = document.querySelector('.newsletter');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                
+                if (emailInput && emailInput.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (emailRegex.test(emailInput.value)) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
